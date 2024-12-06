@@ -1,13 +1,17 @@
-public class CatDecorator implements CatInterface{
-    protected CatClass decoratedCat;
+public abstract class CatDecorator implements Cat {
+    protected Cat decoratedCat;
 
-    public CatDecorator(CatClass decoratedCat){
+    public CatDecorator(Cat decoratedCat) {
         this.decoratedCat = decoratedCat;
     }
 
     @Override
-    public void describe(){
-        decoratedCat.describe();
+    public String getDescription() {
+        return decoratedCat.getDescription();
     }
 
+    @Override
+    public double getCost() {
+        return decoratedCat.getCost();
+    }
 }
